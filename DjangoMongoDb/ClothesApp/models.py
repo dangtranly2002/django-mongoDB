@@ -20,6 +20,8 @@ class Product(models.Model):
 
 class Customer(models.Model):
     id = models.AutoField(primary_key=True)
+    user = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
@@ -50,7 +52,6 @@ class Contact(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     detail = models.CharField(max_length=300)
-    status = models.BooleanField(default=True)
 
 class Feedback(models.Model):
     id = models.AutoField(primary_key=True)

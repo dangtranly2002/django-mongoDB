@@ -1,28 +1,31 @@
 from django.conf.urls import url
-from ClothesApp import views
+from django.urls import path
+from .views import CateViewset, BrandViewset, ProdViewset, CusViewset, Orderiewset, OrderItemiewset, ContactViewset, FeedbackViewset
 
 urlpatterns = [
-    url(r'^category$',views.categoryApi),
-    url(r'^category/([0-9]+)$',views.categoryApi),
-
-    url(r'^brand$',views.brandApi),
-    url(r'^brand/([0-9]+)$',views.brandApi),
-
-    url(r'^product$',views.productApi),
-    url(r'^product/([0-9]+)$',views.productApi),
-
-    url(r'^customer$',views.customerApi),
-    url(r'^customer/([0-9]+)$',views.customerApi),
-
-    url(r'^order$',views.orderApi),
-    url(r'^order/([0-9]+)$',views.orderApi),
-
-    url(r'^orderitem$',views.orderitemApi),
-    url(r'^orderitem/([0-9]+)$',views.orderitemApi),
-
-    url(r'^contact$',views.contactApi),
-    url(r'^contact/([0-9]+)$',views.contactApi),
     
-    url(r'^feedback$',views.feedbackApi),
-    url(r'^feedback/([0-9]+)$',views.feedbackApi),
+    path('cate/', CateViewset.as_view()),
+    path('cate/<int:id>', CateViewset.as_view()),
+
+    path('brand/', BrandViewset.as_view()),
+    path('brand/<int:id>', BrandViewset.as_view()),
+
+    path('cate/', ProdViewset.as_view()),
+    path('cate/<int:id>', ProdViewset.as_view()),
+
+    path('cate/', CusViewset.as_view()),
+    path('cate/<int:id>', CusViewset.as_view()),
+
+    path('cate/', Orderiewset.as_view()),
+    path('cate/<int:id>', Orderiewset.as_view()),
+
+    path('cate/', OrderItemiewset.as_view()),
+    path('cate/<int:id>', OrderItemiewset.as_view()),
+
+    path('cate/', ContactViewset.as_view()),
+    path('cate/<int:id>', ContactViewset.as_view()),
+
+    path('cate/', FeedbackViewset.as_view()),
+    path('cate/<int:id>', FeedbackViewset.as_view()),
+
 ]

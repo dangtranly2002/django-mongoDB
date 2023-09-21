@@ -20,5 +20,6 @@ from django.conf.urls import url,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('ClothesApp.urls')),
     url(r'^',include('ClothesApp.urls'))
 ]
